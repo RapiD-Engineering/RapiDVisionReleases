@@ -10,13 +10,13 @@
 
 
         function downloadClickOnce() {
-            fetch('https://raw.githubusercontent.com/RapiD-Engineering/RapiDVisionReleases/main/published/rapidvisiondesktop.application')
+            fetch('https://raw.githubusercontent.com/RapiD-Engineering/RapiDVisionReleases/main/published/RapiDVision.application/rapidvisiondesktop.application')
                 .then(response => response.blob())
                 .then(blob => {
                     const blobUrl = URL.createObjectURL(blob);
                     const a = document.createElement('a');
                     a.href = blobUrl;
-                    a.download = 'rapidvisiondesktop.application';
+                    a.download = 'RapiDVision.application/rapidvisiondesktop.application';
                     document.body.appendChild(a);
                     a.click();
                     document.body.removeChild(a);
