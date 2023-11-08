@@ -5,6 +5,53 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Install RapiD Vision</title>
     <style>
+        /* Add CSS styling here */
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #000000;
+            padding: 50px;
+            display: flex;
+            flex-direction: column;
+            justify-content: top;
+            align-items: center;
+            height: 100vh; /* viewport height */
+            margin: 20;
+        }
+
+
+        h1 {
+            color: #ffffff;
+        }
+
+        .header-container {
+            display: flex;
+            align-items: center; /* This will vertically center the items if they have different heights */
+            gap: 20px; /* Creates a gap between the header and image. Adjust as needed. */
+        }
+
+        .top-left-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 150px;
+            margin: 20px;
+            z-index: 1; /* Ensure it's above the background */
+        }
+
+        button {
+            padding: 15px 30px;
+            font-size: 16px;
+            border: none;
+            background-color: #14A8F7;
+            color: #ffffff;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+            button:hover {
+                background-color: #0056b3;
+            }
     </style>
     <script>
 
@@ -29,7 +76,14 @@
     </script>
 </head>
 <body>
-    <h1>Install RapiD Vision</h1>
+
+    <img class="top-left-image" src="RAPIDGRIJS.png" alt="Top Left Image">
+
+    <div class="header-container">
+        <h1>Install RapiD Vision App</h1>
+        <img src="Logo_RV_Horizontaal_500x89.png">
+    </div>
+
     <button onclick="downloadClickOnce()">Click here to Install</button>
 </body>
 </html>
