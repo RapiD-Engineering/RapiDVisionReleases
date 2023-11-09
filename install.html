@@ -83,10 +83,10 @@
                 });
         }
         function downloadAPK() {
-            const apkUrl = 'https://github.com/RapiD-Engineering/RapiDVisionReleases/raw/main/android/rapidvision.apk'; // Update with the correct URL
+            const apkUrl = 'https://github.com/RapiD-Engineering/RapiDVisionReleases/releases/download/v1.0.0.6-alpha/com.rapidengineering.rapidvision-Signed.apk'; // Update with the correct URL
             const a = document.createElement('a');
             a.href = apkUrl;
-            a.download = 'rapidvision.apk';
+            a.download = 'com.rapidengineering.rapidvision-Signed.apk';
             document.body.appendChild(a);
             a.click();
             document.body.removeChild(a);
