@@ -1,7 +1,9 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\published",
+    "\\published\\Application Files"
   ],
-  "SelectedNode": "\\published",
+  "SelectedNode": "\\published\\Application Files\\rapidvisiondesktop_1_0_0_4",
   "PreviewInSolutionExplorer": false
 }

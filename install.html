@@ -30,6 +30,7 @@
         }
 
         .top-left-image {
+            background: #000000;
             position: absolute;
             top: 0;
             left: 0;
@@ -50,6 +51,8 @@
             border: none;
             background-color: #14A8F7;
             color: #ffffff;
+            margin:5px;
+            min-width:250px;
             border-radius: 5px;
             cursor: pointer;
             transition: background-color 0.3s;
@@ -79,6 +82,15 @@
                     console.error("There was an error fetching the file:", error);
                 });
         }
+        function downloadAPK() {
+            const apkUrl = 'https://github.com/RapiD-Engineering/RapiDVisionReleases/raw/main/android/rapidvision.apk'; // Update with the correct URL
+            const a = document.createElement('a');
+            a.href = apkUrl;
+            a.download = 'rapidvision.apk';
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+        }
     </script>
 </head>
 <body>
@@ -86,10 +98,12 @@
     <img class="top-left-image" src="RAPIDGRIJS.png" alt="Top Left Image">
 
     <div class="header-container">
-        <h1>Install RapiD Vision App</h1>
+        <h1>Install RapiD Vision App  </h1>
         <img class="logo" src="Beeldmerk_RV.ico">
     </div>
 
-    <button onclick="downloadClickOnce()">Click here to Install</button>
+    <button onclick="downloadClickOnce()">Windows x86</button>
+    <button onclick="downloadAPK()">Android .apk</button>
+
 </body>
 </html>
