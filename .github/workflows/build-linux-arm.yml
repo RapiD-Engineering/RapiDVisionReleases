@@ -1,0 +1,41 @@
+name: Build Avalonia Desktop Project for Linux ARM
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Set up .NET Core
+      uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: '7.x' # Adjust the version to the one you're using
+
+    - name: Install dependencies
+      run: sudo apt-get install -y qemu qemu-user-static binfmt-support
+
+    - name: Set up ARM architecture
+      run: |
+        docker run --rm --privileged multiarch/qemu-user-static --reset -p yes
+        echo ":arm:M::\x7fELF\x02\x01\x01\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00:/bin/true" | sudo tee /proc/sys/fs/binfmt_misc/register
+        sudo service binfmt-support restart
+
+    - name: Restore dependencies
+      run: dotnet restore
+
+    - name: Build the project
+      run: dotnet build --runtime linux-arm
+
+    - name: Publish the project
+      run: dotnet publish -c Release -r linux-arm --self-contained
+
+    - name: Upload build artifacts
+      uses: actions/upload-artifact@v2
+      with:
+        name: linux-arm-build
+        path: |
+          **/bin/Release/net7.0/linux-arm/publish/
