@@ -1,10 +1,9 @@
 {
   "ExpandedNodes": [
     "",
-    "\\.github",
-    "\\.github\\workflows",
     "\\published",
     "\\published\\Application Files"
   ],
+  "SelectedNode": "\\published\\Publish.html",
   "PreviewInSolutionExplorer": false
 }
